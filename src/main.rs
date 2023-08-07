@@ -20,7 +20,6 @@ fn run(set: &Path, seed: u64) -> Result<(), String> {
     for _ in 0..side.capacity() {
         side.push(base_vec.clone());
     }
-    println!("set len: {}", fields.fields().len());
 
     let sides = [side.clone(), side.clone(), side.clone(), side.clone()];
     let params = Params::new(fields.fields().clone(), &sides);
@@ -31,7 +30,7 @@ fn run(set: &Path, seed: u64) -> Result<(), String> {
 }
 
 fn main() -> Result<(), String> {
-    run(Path::new("res\\circuit.json"), 6)?;
+    run(Path::new("res\\circuit.json"), 7)?;
 
     Ok(())
 }

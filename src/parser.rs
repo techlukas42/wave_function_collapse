@@ -9,6 +9,7 @@ struct Data {
     name: String,
     rotateable: bool,
     sides: Vec<String>,
+    weight: u32,
 }
 
 impl Data {
@@ -27,13 +28,13 @@ impl Data {
             let mut sides3 = sides.clone();
             sides3.rotate_right(3);
             vec![
-                Field::new(self.name.clone(), 0, sides),
-                Field::new(self.name.clone(), 90, sides1),
-                Field::new(self.name.clone(), 180, sides2),
-                Field::new(self.name.clone(), 270, sides3),
+                Field::new(self.name.clone(), 0, sides, self.weight),
+                Field::new(self.name.clone(), 90, sides1, self.weight),
+                Field::new(self.name.clone(), 180, sides2, self.weight),
+                Field::new(self.name.clone(), 270, sides3, self.weight),
             ]
         } else {
-            vec![Field::new(self.name.clone(), 0, sides)]
+            vec![Field::new(self.name.clone(), 0, sides, self.weight)]
         }
     }
 }

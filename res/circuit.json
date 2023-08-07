@@ -10,7 +10,8 @@
         "i-Substrate",
         "i-Substrate",
         "i-Substrate"
-      ]
+      ],
+      "weight" : 4
     },
     {
       "name" : "bridge.png",
@@ -20,7 +21,8 @@
         "i-Wire",
         "i-Track",
         "i-Wire"
-      ]
+      ],
+      "weight" : 1
     },
     {
       "name" : "component.png",
@@ -30,7 +32,8 @@
         "i-Component",
         "i-Component",
         "i-Component"
-      ]
+      ],
+      "weight" : 1
     },
     {
       "name" : "connection.png",
@@ -40,7 +43,8 @@
         "p-Component",
         "i-Component",
         "q-Component"
-      ]
+      ],
+      "weight" : 1
     },
     {
       "name" : "corner.png",
@@ -48,29 +52,43 @@
       "sides" : [
         "i-Substrate",
         "i-Substrate",
-        "p-Component",
-        "q-Component"
-      ]
+        "p-Component-u_corner",
+        "q-Component-u_corner"
+      ],
+      "weight" : 1
     },
     {
       "name" : "dskew.png",
       "rotateable" : true,
       "sides" : [
-        "i-Track",
-        "i-Track",
-        "i-Track",
-        "i-Track"
-      ]
+        "i-Track-u_skew",
+        "i-Track-u_skew",
+        "i-Track-u_skew",
+        "i-Track-u_skew"
+      ],
+      "weight" : 1
+    },
+    {
+      "name" : "edge.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Substrate",
+        "p-Component",
+        "i-Component",
+        "q-Component"
+      ],
+      "weight" : 1
     },
     {
       "name" : "skew.png",
       "rotateable" : true,
       "sides" : [
-        "i-Track",
-        "i-Track",
+        "i-Track-u_skew",
+        "i-Track-u_skew",
         "i-Substrate",
         "i-Substrate"
-      ]
+      ],
+      "weight" : 1
     },
     {
       "name" : "t.png",
@@ -80,7 +98,8 @@
         "i-Track",
         "i-Track",
         "i-Track"
-      ]
+      ],
+      "weight" : 1
     },
     {
       "name" : "track.png",
@@ -90,47 +109,52 @@
         "i-Substrate",
         "i-Track",
         "i-Substrate"
-      ]
+      ],
+      "weight" : 1
     },
     {
       "name" : "transition.png",
       "rotateable" : true,
       "sides" : [
-        "i-Wire",
+        "i-Wire-u_transition",
         "i-Substrate",
-        "i-Track",
+        "i-Track-u_transition",
         "i-Substrate"
-      ]
+      ],
+      "weight" : 1
     },
     {
       "name" : "turn.png",
       "rotateable" : true,
       "sides" : [
-        "i-Track",
-        "i-Track",
+        "i-Track-u_skew",
+        "i-Track-u_skew",
         "i-Substrate",
         "i-Substrate"
-      ]
+      ],
+      "weight" : 1
     },
     {
       "name" : "viad.png",
       "rotateable" : true,
       "sides" : [
         "i-Substrate",
-        "i-Track",
+        "i-Track-u_via",
         "i-Substrate",
-        "i-Track"
-      ]
+        "i-Track-u_via"
+      ],
+      "weight" : 1
     },
     {
       "name" : "vias.png",
       "rotateable" : true,
       "sides" : [
-        "i-Track",
+        "i-Track-u_via",
         "i-Substrate",
         "i-Substrate",
         "i-Substrate"
-      ]
+      ],
+      "weight" : 1
     },
     {
       "name" : "wire.png",
@@ -140,7 +164,8 @@
         "i-Wire",
         "i-Substrate",
         "i-Wire"
-      ]
+      ],
+      "weight" : 1
     }
   ]
 }

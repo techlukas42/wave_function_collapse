@@ -12,6 +12,7 @@ pub struct Field {
     img_name: String,
     rotation: i32,
     sides: [String; 4],
+    weight: u32,
 }
 
 #[derive(new)]
@@ -155,9 +156,9 @@ pub fn collapse_wave(
                 .iter()
                 .any(|d| d == field)
         });
-        let to = vec![new.swap_remove(rng.gen_range(0..new.len()))];
-        decision_tree.decide(&mut wave, found, to.first().unwrap().clone());
-        _ = wave.set(found.y, found.x, to);
+        let to = chose_field(rng, &new);
+        decision_tree.decide(&mut wave, found, to.clone());
+        _ = wave.set(found.y, found.x, vec![to]);
         if propagate(params, &mut wave, &mut decision_tree, &mut next).is_err() {
             undo(&mut wave, &mut decision_tree)?;
             next.clear();
@@ -214,6 +215,17 @@ fn find_lowest_entropy(
     }
 
     Ok(None)
+}
+
+fn chose_field(rng: &mut SmallRng, fields: &[Field]) -> Field {
+    let adjusted: Vec<Field> = fields
+        .iter()
+        .flat_map(|field| vec![field.clone(); field.weight as usize])
+        .collect();
+    adjusted
+        .get(rng.gen_range(0..adjusted.len())) //TODO Change
+        .expect("rng should generate within range")
+        .clone()
 }
 
 fn apply_contrainst_sides(
@@ -360,14 +372,20 @@ fn fits(a: &str, b: &str) -> bool {
     }
     let af = av.first().unwrap();
     let bf = bv.first().unwrap();
+    let an = av.get(1).unwrap();
+    let bn = bv.get(1).unwrap();
+    let a_flag = av.get(2).unwrap_or(&"none");
+    let b_flag = bv.get(2).unwrap_or(&"none");
 
-    if af == &"i" && a == b {
+    if a_flag.starts_with("u_") && b_flag.starts_with("u_") && a_flag == b_flag {
+        return false;
+    }
+
+    if af == &"i" && bf == &"i" && an == bn {
         return true;
     }
 
-    if ((af == &"q" && bf == &"p") || (af == &"p" && bf == &"q"))
-        && av.get(1).unwrap() == bv.get(1).unwrap()
-    {
+    if ((af == &"q" && bf == &"p") || (af == &"p" && bf == &"q")) && an == bn {
         return true;
     }
 
@@ -463,10 +481,10 @@ mod tests {
             i_track_string.clone(),
         ];
         vec![
-            Field::new(substrate_string, 0, substrate_sides),
-            Field::new(wire_string, 0, wire_sides),
-            Field::new(track_string, 0, track_sides),
-            Field::new(cross_string, 0, cross_sides),
+            Field::new(substrate_string, 0, substrate_sides, 1),
+            Field::new(wire_string, 0, wire_sides, 1),
+            Field::new(track_string, 0, track_sides, 1),
+            Field::new(cross_string, 0, cross_sides, 1),
         ]
     }
 
