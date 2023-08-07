@@ -1,0 +1,146 @@
+{
+  "dir" : "img\\circuits",
+  "fields" : 
+  [
+    {
+      "name" : "substrate.png",
+      "rotateable" : false,
+      "sides" : [
+        "i-Substrate",
+        "i-Substrate",
+        "i-Substrate",
+        "i-Substrate"
+      ]
+    },
+    {
+      "name" : "bridge.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Track",
+        "i-Wire",
+        "i-Track",
+        "i-Wire"
+      ]
+    },
+    {
+      "name" : "component.png",
+      "rotateable" : false,
+      "sides" : [
+        "i-Component",
+        "i-Component",
+        "i-Component",
+        "i-Component"
+      ]
+    },
+    {
+      "name" : "connection.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Track",
+        "p-Component",
+        "i-Component",
+        "q-Component"
+      ]
+    },
+    {
+      "name" : "corner.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Substrate",
+        "i-Substrate",
+        "p-Component",
+        "q-Component"
+      ]
+    },
+    {
+      "name" : "dskew.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Track",
+        "i-Track",
+        "i-Track",
+        "i-Track"
+      ]
+    },
+    {
+      "name" : "skew.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Track",
+        "i-Track",
+        "i-Substrate",
+        "i-Substrate"
+      ]
+    },
+    {
+      "name" : "t.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Substrate",
+        "i-Track",
+        "i-Track",
+        "i-Track"
+      ]
+    },
+    {
+      "name" : "track.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Track",
+        "i-Substrate",
+        "i-Track",
+        "i-Substrate"
+      ]
+    },
+    {
+      "name" : "transition.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Wire",
+        "i-Substrate",
+        "i-Track",
+        "i-Substrate"
+      ]
+    },
+    {
+      "name" : "turn.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Track",
+        "i-Track",
+        "i-Substrate",
+        "i-Substrate"
+      ]
+    },
+    {
+      "name" : "viad.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Substrate",
+        "i-Track",
+        "i-Substrate",
+        "i-Track"
+      ]
+    },
+    {
+      "name" : "vias.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Track",
+        "i-Substrate",
+        "i-Substrate",
+        "i-Substrate"
+      ]
+    },
+    {
+      "name" : "wire.png",
+      "rotateable" : true,
+      "sides" : [
+        "i-Substrate",
+        "i-Wire",
+        "i-Substrate",
+        "i-Wire"
+      ]
+    }
+  ]
+}
