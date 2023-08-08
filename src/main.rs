@@ -5,6 +5,7 @@ extern crate derive_new;
 
 use rand::rngs::SmallRng;
 use rand::SeedableRng;
+use std::env;
 use std::path::Path;
 
 use crate::collapse::Params;
@@ -30,7 +31,16 @@ fn run(set: &Path, seed: u64) -> Result<(), String> {
 }
 
 fn main() -> Result<(), String> {
-    run(Path::new("res\\circuit.json"), 7)?;
+    let args: Vec<String> = env::args().collect();
+    let path = args
+        .get(1)
+        .map(|string| string.as_str())
+        .unwrap_or("res\\circuit.json");
+    let seed = args
+        .get(2)
+        .map(|str| str.parse::<u64>().expect("seed must be a valid number"))
+        .unwrap_or(0);
+    run(Path::new(path), seed)?;
 
     Ok(())
 }

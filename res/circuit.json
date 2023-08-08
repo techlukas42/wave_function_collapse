@@ -124,17 +124,6 @@
       "weight" : 1
     },
     {
-      "name" : "turn.png",
-      "rotateable" : true,
-      "sides" : [
-        "i-Track-u_skew",
-        "i-Track-u_skew",
-        "i-Substrate",
-        "i-Substrate"
-      ],
-      "weight" : 1
-    },
-    {
       "name" : "viad.png",
       "rotateable" : true,
       "sides" : [
