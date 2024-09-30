@@ -41,7 +41,7 @@
       "sides" : [
         "i-Track",
         "p-Component",
-        "i-Component",
+        "i-Component-u_edge",
         "q-Component"
       ],
       "weight" : 1
@@ -74,7 +74,7 @@
       "sides" : [
         "i-Substrate",
         "p-Component",
-        "i-Component",
+        "i-Component-u_edge",
         "q-Component"
       ],
       "weight" : 1
